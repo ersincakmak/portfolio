@@ -3,6 +3,7 @@ import { IoLogoReact } from 'react-icons/io5'
 import ToggleTheme from './toggleTheme'
 import { motion, useAnimation, useReducedMotion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ReactIcon = () => {
   const controls = useAnimation()
@@ -46,7 +47,7 @@ const ReactIcon = () => {
     <motion.div
       ref={ref}
       animate={controls}
-      className="text-4xl cursor-pointer text-react rounded-full"
+      className="text-6xl cursor-pointer text-react rounded-full"
     >
       <IoLogoReact />
     </motion.div>
@@ -59,12 +60,12 @@ const NavLink = ({ to, title }) => {
       className="flex items-center bg-green-200 dark:bg-green-700 py-2 px-3 rounded-md gap-2
       group"
     >
-      <a
-        href={to}
+      <Link
+        to={to}
         className="transform group-hover:scale-110 group-hover:translate-x-3.5 transition duration-200 font-semibold"
       >
         {title}
-      </a>
+      </Link>
       <span
         className="bg-green-800 text-green-100 dark:bg-green-100 p-0 rounded-full text-lg dark:text-green-900 transform
         group-hover:translate-x-5 transition"
@@ -75,18 +76,15 @@ const NavLink = ({ to, title }) => {
   )
 }
 
-const NavBar = ({ name }) => {
+const NavBar = () => {
   return (
     <nav
-      className="p-8 container w-full max-w-7xl mx-auto flex justify-between
+      className="p-8 w-full max-w-5xl mx-auto flex justify-between
     items-center"
     >
+      <ReactIcon />
       <div className="flex items-center gap-4">
-        <h2 className="font-bold text-3xl">{name}</h2>
-        <ReactIcon />
-      </div>
-      <div className="flex items-center gap-4">
-        <NavLink to="#" title="Projects" />
+        <NavLink to="/projects" title="Projects" />
         <ToggleTheme />
       </div>
     </nav>
