@@ -56,23 +56,21 @@ const ReactIcon = () => {
 
 const NavLink = ({ to, title }) => {
   return (
-    <button
+    <Link
+      to={to}
       className="flex items-center bg-green-200 dark:bg-green-700 py-2 px-3 rounded-md gap-2
       group"
     >
-      <Link
-        to={to}
-        className="transform group-hover:scale-110 group-hover:translate-x-3.5 transition duration-200 font-semibold"
-      >
+      <span className="transform group-hover:scale-110 group-hover:translate-x-3.5 transition duration-200 font-semibold">
         {title}
-      </Link>
+      </span>
       <span
         className="bg-green-800 text-green-100 dark:bg-green-100 p-0 rounded-full text-lg dark:text-green-900 transform
         group-hover:translate-x-5 transition"
       >
         <BiRightArrowAlt />
       </span>
-    </button>
+    </Link>
   )
 }
 

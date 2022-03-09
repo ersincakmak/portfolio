@@ -59,7 +59,7 @@ const Profile = ({ profile }) => {
         <Mail link={profile.mail} icon={SiMaildotru} />
       </div>
       <span
-        className="p-8 indent-4 bg-gray-400 dark:bg-zinc-600 rounded max-w-3xl
+        className="p-8 indent-4 bg-gray-300 dark:bg-zinc-600 rounded max-w-3xl
         shadow-lg flex flex-col gap-3"
       >
         {profile.coverLetter.split('\n').map((line, index) => (
